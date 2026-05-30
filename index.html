@@ -251,6 +251,16 @@
   .post p { font-size:0.92rem; color: var(--ink-soft); margin-bottom: 16px; flex:1; }
   .post .more { font-weight:600; font-size:0.9rem; color: var(--ink); }
 
+  /* Coverage map */
+  .map-legend { display:flex; flex-wrap:wrap; gap:14px 26px; justify-content:center; margin:0 0 26px; font-size:0.92rem; color:var(--ink-soft); }
+  .map-legend .item { display:flex; align-items:center; gap:8px; }
+  .map-legend .sw { width:15px; height:15px; border-radius:4px; display:inline-block; }
+  .map-legend .star { color:var(--coral); font-size:17px; line-height:1; }
+  .map-wrap { max-width:880px; margin:0 auto; }
+  .map-wrap svg { width:100%; height:auto; display:block; }
+  .coverage-statement { text-align:center; font-size:clamp(1.3rem,2.7vw,1.75rem); font-weight:600; color:var(--ink); max-width:780px; margin:30px auto 8px; letter-spacing:-0.01em; }
+  .coverage-sub { text-align:center; color:var(--ink-soft); font-size:1.02rem; margin:0 auto; }
+
   /* CTA */
   .cta-block { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); border-radius: var(--radius-lg); padding: 72px 56px; text-align:center; }
   .cta-block .c-arc { position:absolute; border-radius:50%; }
@@ -486,6 +496,24 @@
   </div>
 </section>
 
+<!-- COVERAGE MAP -->
+<section class="block" id="coverage">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow">Where We Care</span>
+      <h2>Caring for patients across the country</h2>
+    </div>
+    <div class="map-legend">
+      <span class="item"><span class="sw" style="background:#F6B6A6; border:0.5px solid #EE7A5F;"></span> Taking patients (45 states)</span>
+      <span class="item"><span class="sw" style="background:#E7DFD2; border:0.5px solid #CFC6B5;"></span> Coming soon</span>
+      <span class="item"><span class="star">&#9733;</span> Our clinics</span>
+    </div>
+    <div id="coverage-map" class="map-wrap"></div>
+    <p class="coverage-statement">We diagnose and treat patients in 45 states.</p>
+    <p class="coverage-sub">In-person care at our clinics in Nashville, TN and Charleston, SC.</p>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="block" id="inquire">
   <div class="wrap">
@@ -508,6 +536,43 @@
     </div>
   </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+(function () {
+  if (!window.d3 || !window.topojson) return;
+  var NOT_SERVING = {'Hawaii':1,'Alaska':1,'Connecticut':1,'Oregon':1,'New Mexico':1,'District of Columbia':1};
+  var clinics = [
+    {name:'Nashville, TN', coords:[-86.7816, 36.1627], dx:9, dy:-11, anchor:'start'},
+    {name:'Charleston, SC', coords:[-79.9311, 32.7765], dx:10, dy:15, anchor:'start'}
+  ];
+  var svg = d3.select('#coverage-map').append('svg')
+    .attr('viewBox','0 0 900 560').attr('width','100%').attr('role','img')
+    .attr('aria-label','US map: Contour Health takes patients in 45 states, with clinics in Nashville, TN and Charleston, SC.');
+  var proj = d3.geoAlbersUsa().scale(1150).translate([450,275]);
+  var path = d3.geoPath(proj);
+  d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function (us) {
+    var feats = topojson.feature(us, us.objects.states).features;
+    svg.append('g').selectAll('path').data(feats).join('path')
+      .attr('d', path)
+      .attr('fill', function (d) { return NOT_SERVING[d.properties.name] ? '#E7DFD2' : '#F6B6A6'; })
+      .attr('stroke', '#FBF8F3').attr('stroke-width', 1);
+    var star = d3.symbol().type(d3.symbolStar).size(240);
+    var g = svg.append('g');
+    clinics.forEach(function (c) {
+      var p = proj(c.coords); if (!p) return;
+      g.append('circle').attr('cx',p[0]).attr('cy',p[1]).attr('r',9).attr('fill','#fff').attr('opacity',0.92);
+      g.append('path').attr('d', star).attr('transform','translate('+p[0]+','+p[1]+')')
+        .attr('fill','#F26B4E').attr('stroke','#993C1D').attr('stroke-width',0.75);
+      g.append('text').attr('x',p[0]+c.dx).attr('y',p[1]+c.dy).attr('text-anchor',c.anchor)
+        .attr('font-family',"'Outfit',sans-serif").attr('font-size','15px').attr('font-weight','500')
+        .attr('fill','#2A2724').attr('stroke','#FBF8F3').attr('stroke-width','3').attr('paint-order','stroke')
+        .text(c.name);
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
