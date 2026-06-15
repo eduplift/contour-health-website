@@ -107,6 +107,11 @@
   .nav-links { display:flex; gap:30px; align-items:center; }
   .nav-links a { font-size:0.93rem; color:var(--ink-soft); }
   .nav-links a:hover { color:var(--ink); text-decoration:none; }
+  .nav-toggle { display:none; background:var(--card); border:1px solid var(--line); border-radius:12px; width:44px; height:44px; cursor:pointer; padding:0 11px; flex-direction:column; justify-content:center; gap:5px; align-items:stretch; }
+  .nav-toggle span { display:block; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease, opacity .2s ease; }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
   .btn { display:inline-block; background:var(--coral); color:#fff !important; padding:13px 26px; border-radius:999px; font-weight:600; font-size:0.95rem; transition:transform .15s,background .2s; box-shadow:0 8px 20px -8px rgba(242,107,78,0.6); }
   .btn:hover { background:var(--peach-deep); transform:translateY(-1px); text-decoration:none; }
 
@@ -140,7 +145,11 @@
   footer .f-inner { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:center; }
   footer .legal { font-size:0.82rem; color:var(--ink-mute); max-width:520px; }
 
-  @media (max-width:880px) { .nav-links { display:none; } .cta-block { padding:48px 26px; } }
+  @media (max-width:880px) { .nav-toggle { display:inline-flex; }
+    .nav-links { display:flex; position:absolute; top:72px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0; background:rgba(245,242,236,0.98); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding:8px 28px 20px; transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .22s ease, transform .22s ease; box-shadow:0 20px 32px -24px rgba(42,39,36,0.45); }
+    .nav-links.open { transform:none; opacity:1; pointer-events:auto; }
+    .nav-links a { padding:14px 2px; font-size:1.05rem; color:var(--ink); border-bottom:1px solid var(--line); }
+    .nav-links a.btn { margin-top:16px; text-align:center; border-bottom:none; color:#fff; } .cta-block { padding:48px 26px; } }
 </style>
 </head>
 <body>
@@ -148,6 +157,7 @@
   <div class="wrap">
     <nav>
       <a class="brand" href="https://contour-performance.com/"><span class="mark"></span> Contour</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <div class="nav-links">
         <a href="https://contour-performance.com/#philosophy">Philosophy</a>
         <a href="https://contour-performance.com/#membership">Membership</a>
@@ -226,5 +236,16 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var t=document.querySelector(".nav-toggle"), links=document.querySelector(".nav-links");
+  if(!t||!links)return;
+  function set(o){t.classList.toggle("open",o);links.classList.toggle("open",o);t.setAttribute("aria-expanded",o?"true":"false");t.setAttribute("aria-label",o?"Close menu":"Open menu");}
+  t.addEventListener("click",function(){set(!links.classList.contains("open"));});
+  links.addEventListener("click",function(e){if(e.target.tagName==="A")set(false);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);});
+})();
+</script>
 </body>
 </html>
