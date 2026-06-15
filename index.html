@@ -286,6 +286,17 @@
     .hero { padding: 64px 0 72px; }
     .cta-block { padding: 56px 28px; }
   }
+  /* --- scroll reveals + floating hero --- */
+  @keyframes ctrFloatA {0%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-34px) scale(1.06)}100%{transform:translate(0,0) scale(1)}}
+  @keyframes ctrFloatB {0%{transform:translate(0,0) scale(1)}50%{transform:translate(-34px,28px) scale(1.07)}100%{transform:translate(0,0) scale(1)}}
+  @keyframes ctrBreathe {0%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,16px) scale(1.12)}100%{transform:translate(0,0) scale(1)}}
+  .hero .arc.a1{animation:ctrFloatA 15s ease-in-out infinite}
+  .hero .arc.a2{animation:ctrFloatB 18s ease-in-out infinite}
+  .hero .arc.a3{animation:ctrFloatA 12s ease-in-out infinite reverse}
+  .hero .dot-citron{animation:ctrBreathe 14s ease-in-out infinite}
+  .ctr-reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .ctr-reveal.ctr-in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){.hero .arc.a1,.hero .arc.a2,.hero .arc.a3,.hero .dot-citron{animation:none!important}.ctr-reveal{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -614,5 +625,16 @@
 })();
 </script>
 
+<script>
+(function(){
+  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #team .section-head, .member, #blog .section-head, .post, #coverage .section-head, .map-wrap, .coverage-statement, .coverage-sub, .cta-block';
+  var targets=[].slice.call(document.querySelectorAll(sel));
+  targets.forEach(function(el){el.classList.add('ctr-reveal');});
+  ['.pillars .pillar','.team .member','.posts .post'].forEach(function(g){[].slice.call(document.querySelectorAll(g)).forEach(function(el,i){el.style.transitionDelay=(i*0.09)+'s';});});
+  if(!('IntersectionObserver' in window)){targets.forEach(function(el){el.classList.add('ctr-in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ctr-in');io.unobserve(e.target);}});},{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  targets.forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>
