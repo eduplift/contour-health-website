@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contour Health — Performance Medicine, Made Personal</title>
+<title>Contour Health — Functional Performance Medicine, Made Personal</title>
 <meta name="description" content="A private, expert-led practice built around small, personal panels. Functional, traditional, and longevity medicine — thoughtfully tailored to how you want to live." />
 <meta name="theme-color" content="#F5F2EC" />
 <link rel="canonical" href="https://contour.health/" />
-<link rel="icon" type="image/png" href="/favicon.png" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -18,7 +18,7 @@
       "@id": "https://contour.health/#practice",
       "name": "Contour Health",
       "alternateName": "Contour Performance Health",
-      "description": "A private, expert-led performance medicine practice blending functional, traditional, and longevity medicine into one personalized plan.",
+      "description": "A private, expert-led functional performance medicine practice blending functional, traditional, and longevity medicine into one personalized plan.",
       "url": "https://contour.health/",
       "image": "https://contour.health/dr-obryan.jpg",
       "logo": "https://contour.health/apple-touch-icon.png",
@@ -73,10 +73,10 @@
     --ink:        #2A2724;
     --ink-soft:   #5F584F;
     --ink-mute:   #8C847A;
-    --peach:      #F6B6A6;
-    --peach-deep: #EE7A5F;
-    --coral:      #F26B4E;
-    --citron:     #E4E625;
+    --peach:      #FF9B88;
+    --peach-deep: #FF5A8A;
+    --coral:      #FF4F70;
+    --citron:     #2FD4C4;
     --line:       #E3DCCF;
     --radius:     22px;
     --radius-lg:  34px;
@@ -92,9 +92,11 @@
     color: var(--ink);
     background-color: var(--paper);
     background-image:
-      radial-gradient(circle at 18% 12%, rgba(246,182,166,0.16), transparent 30%),
-      radial-gradient(circle at 85% 6%, rgba(228,230,37,0.10), transparent 26%),
+      radial-gradient(circle at 18% 12%, rgba(255,155,136,0.18), transparent 30%),
+      radial-gradient(circle at 85% 6%, rgba(47,212,196,0.12), transparent 26%),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    
+    
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -143,7 +145,7 @@
     font-weight: 600; font-size: 0.95rem;
     text-decoration: none; border: none; cursor: pointer;
     transition: transform .15s ease, background .2s ease;
-    box-shadow: 0 8px 20px -8px rgba(242,107,78,0.6);
+    box-shadow: 0 8px 20px -8px rgba(255,79,112,0.55);
   }
   .btn:hover { background: var(--peach-deep); transform: translateY(-1px); }
   .btn.ghost {
@@ -162,13 +164,40 @@
   .hero { position: relative; overflow: hidden; padding: 96px 0 104px; }
   .hero-shapes { position: absolute; inset: 0; pointer-events: none; }
   .arc {
-    position: absolute; left: -130px; top: 40px;
-    width: 460px; height: 460px; border-radius: 50%;
+    position: absolute; left: -110px; top: 50px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
-  .arc.a1 { background: var(--peach); opacity: 0.55; }
-  .arc.a2 { width: 330px; height: 330px; left: -60px; top: 105px; background: var(--peach-deep); opacity: 0.45; }
-  .arc.a3 { width: 190px; height: 190px; left: 70px; top: 175px; background: var(--coral); opacity: 0.55; }
-  .dot-citron { position: absolute; left: 205px; top: 205px; width: 120px; height: 120px; border-radius: 50%; background: var(--citron); opacity: 0.9; mix-blend-mode: multiply; }
+  .arc.a1 {
+    background-image: url('orb-a1.png');
+    opacity: 0.98;
+    filter: saturate(1.15) brightness(1.05);
+  }
+  .arc.a2 {
+    width: 300px; height: 300px; left: -10px; top: 130px;
+    background-image: url('orb-a2.png');
+    opacity: 0.95;
+    filter: saturate(1.2) brightness(1.06) hue-rotate(8deg);
+  }
+  .arc.a3 {
+    width: 180px; height: 180px; left: 120px; top: 200px;
+    background-image: url('orb-a3.png');
+    opacity: 0.97;
+    filter: saturate(1.25) brightness(1.08) hue-rotate(-12deg);
+  }
+  .dot-citron {
+    position: absolute; left: 240px; top: 80px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background-image: url('orb-a1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.98;
+    mix-blend-mode: normal;
+    filter: saturate(1.3) brightness(1.1);
+  }
 
   .hero-inner { position: relative; z-index: 2; max-width: 680px; margin-left: auto; }
   .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4rem); font-weight: 600; margin: 18px 0 22px; }
@@ -192,14 +221,43 @@
     transition: transform .2s ease, box-shadow .2s ease;
   }
   .pillar:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -22px rgba(42,39,36,0.35); }
-  .pillar .ico { width: 46px; height: 46px; border-radius: 14px; margin-bottom: 18px; display:flex; align-items:center; justify-content:center; }
-  .pillar:nth-child(1) .ico { background: rgba(246,182,166,0.5); }
-  .pillar:nth-child(2) .ico { background: rgba(228,230,37,0.45); }
-  .pillar:nth-child(3) .ico { background: rgba(242,107,78,0.30); }
-  .pillar .ico span { width: 16px; height: 16px; border-radius: 50%; }
-  .pillar:nth-child(1) .ico span { background: var(--peach-deep); }
-  .pillar:nth-child(2) .ico span { background: #b8b800; }
-  .pillar:nth-child(3) .ico span { background: var(--coral); }
+  .pillar .ico {
+    position: relative;
+    width: 88px; height: 78px;
+    margin-bottom: 18px;
+    background: transparent;
+  }
+  .pillar .ico .blob {
+    position: absolute; left: 0; top: 2px;
+    width: 68px; height: 68px;
+    display: block;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    box-shadow: none;
+    filter: drop-shadow(0 8px 14px rgba(42,39,36,0.22));
+  }
+  .pillar .ico .dot {
+    position: absolute; display: block; border-radius: 50%;
+    box-shadow: 0 3px 8px -3px rgba(42,39,36,0.4);
+  }
+  .pillar .ico .d1 { width: 20px; height: 20px; right: 0; top: 0; }
+  .pillar .ico .d2 { width: 14px; height: 14px; right: 6px; bottom: 6px; }
+  .pillar:nth-child(1) .ico .blob { background-image: url('tile-blob-1.png'); }
+  .pillar:nth-child(1) .ico .d1 { background: #ff7a3a; }
+  .pillar:nth-child(1) .ico .d2 { background: #ff4f70; }
+  .pillar:nth-child(2) .ico .blob { background-image: url('tile-blob-2.png'); transform: rotate(18deg); }
+  .pillar:nth-child(2) .ico .d1 { background: #ffb020; }
+  .pillar:nth-child(2) .ico .d2 { background: #2fd4c4; }
+  .pillar:nth-child(3) .ico .blob { background-image: url('tile-blob-3.png'); transform: rotate(-12deg) scaleX(-1); }
+  .pillar:nth-child(3) .ico .d1 { background: #2fd4c4; }
+  .pillar:nth-child(3) .ico .d2 { background: #ff5a8a; }
+  @media (prefers-reduced-motion: no-preference) {
+    .pillar:hover .ico .blob { transform: scale(1.06); transition: transform .25s ease; }
+    .pillar:nth-child(2):hover .ico .blob { transform: rotate(18deg) scale(1.06); }
+    .pillar:nth-child(3):hover .ico .blob { transform: rotate(-12deg) scaleX(-1) scale(1.06); }
+  }
   .pillar h3 { font-size: 1.22rem; margin-bottom: 10px; }
   .pillar p { color: var(--ink-soft); font-size: 0.98rem; }
 
@@ -313,13 +371,14 @@
 <header>
   <div class="wrap">
     <nav>
-      <div class="brand"><span class="mark"></span> Contour</div>
+      <div class="brand"><span class="mark"></span> Contour Health</div>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <div class="nav-links">
         <a href="#philosophy">Philosophy</a>
         <a href="#membership">Membership</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="#team">Care Team</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="metabolic.html">Metabolic</a>
+        <a href="care-team.html">Care Team</a>
         <a href="#blog">Journal</a>
         <a class="btn" href="#inquire">I'm Interested</a>
       </div>
@@ -353,22 +412,22 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Our Philosophy</span>
-      <h2>What is performance medicine?</h2>
+      <h2>What is functional performance medicine?</h2>
       <p>A thoughtful blend of functional, traditional, and longevity medicine — drawing the most relevant parts of each into a plan that's genuinely yours. The goal is simple: to help you feel and perform at your best, through a deep understanding of your physiology and a clinician who knows you by name.</p>
     </div>
     <div class="pillars">
       <div class="pillar">
-        <div class="ico"><span></span></div>
+        <div class="ico" aria-hidden="true"><i class="blob"></i><i class="dot d1"></i><i class="dot d2"></i></div>
         <h3>Functional Medicine</h3>
         <p>Root-cause understanding through advanced diagnostics and personalized protocols.</p>
       </div>
       <div class="pillar">
-        <div class="ico"><span></span></div>
+        <div class="ico" aria-hidden="true"><i class="blob"></i><i class="dot d1"></i><i class="dot d2"></i></div>
         <h3>Traditional Medicine</h3>
         <p>Evidence-based clinical care, grounded in established medical practice.</p>
       </div>
       <div class="pillar">
-        <div class="ico"><span></span></div>
+        <div class="ico" aria-hidden="true"><i class="blob"></i><i class="dot d1"></i><i class="dot d2"></i></div>
         <h3>Longevity Medicine</h3>
         <p>Proactive strategies focused on healthspan, vitality, and lasting energy.</p>
       </div>
@@ -387,7 +446,7 @@
     </div>
     <div class="member-grid">
       <div class="member-card">
-        <a class="tag" href="/pricing.html" style="text-decoration:none;">Plans from $99/month →</a>
+        <a class="tag" href="pricing.html" style="text-decoration:none;">Plans from $99/month →</a>
         <h3>Your seat at the table</h3>
         <p>Your membership gives you access to a comprehensive analysis, a functional medicine consult, a longevity consult, a registered dietitian consultation, traditional primary care, and member pricing on supplements, labs, and more. We'll shape the right plan together — it starts with a short, relaxed conversation, and we take it from there.</p>
         <a class="btn" href="#inquire">I'm Interested</a>
@@ -441,68 +500,6 @@
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="block" id="team">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Your Care Team</span>
-      <h2>People who know you by name</h2>
-      <p>A small team means real relationships — a direct line to your clinician, not a call center or a triage queue.</p>
-    </div>
-    <div class="team">
-      <div class="member">
-        <div class="photo"><div class="ph-arc"></div><img src="https://contour.health/dr-obryan.jpg" alt="Dr. Ed O'Bryan, MD" onerror="this.style.display='none'; this.parentNode.querySelector('.initials').style.display='block';" /><span class="initials" style="display:none;">EO</span></div>
-        <div class="body">
-          <div class="role-eyebrow">Functional &amp; Performance Medicine</div>
-          <h3>Ed O'Bryan, MD, MBA, CPE</h3>
-          <div class="role">Founding Clinician</div>
-          <p>Dr. O'Bryan has over 25 years clinical experience treating patients all over the world, from Africa to Central America to the US. He is very unique in that many of the infectious or inflammatory root causes of disease that are gaining visibility today he has treated first-hand for decades through his founding of the non-profit OneWorld Health. His passion is making patients healthy on an individualized basis while keeping access to the very best healthcare in the world affordable.</p>
-          <p>He received his M.D. at the Medical University of South Carolina, his M.B.A. at the University of Tennessee, is a Certified Physician Executive and member of the prestigious AOA Medical Honor Society. He is board certified in Internal Medicine, credentialed in Emergency Medicine, and maintains an Associate Professor of Medicine appointment at MUSC. He has extensive experience in rare autoimmune disease, tropical medicine, longevity, functional health and the traditional medical system and loves blending the best of these into one cohesive individualized plan built around his patients.</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="photo"><div class="ph-arc"></div><img src="https://contour.health/kristen-toth.jpg" alt="Kristen Toth, PA-C" onerror="this.style.display='none'; this.parentNode.querySelector('.initials').style.display='block';" /><span class="initials" style="display:none;">KT</span></div>
-        <div class="body">
-          <div class="role-eyebrow">Functional Medicine</div>
-          <h3>Kristen Toth, PA-C</h3>
-          <div class="role">Physician Assistant</div>
-          <p>Kristen bridges the gap between conventional clinical care and proactive health optimization. After beginning her career in the ER and successfully navigating her own complex health challenges with Hashimoto's and mold exposure, Kristen shifted her focus entirely to functional medicine — recognizing it as the premier path to long-term vitality.</p>
-          <p>At Contour, Kristen looks beyond the traditional model of mere symptom management. Instead, she utilizes a root-cause approach, analyzing your complete physiology — from advanced diagnostics and environmental factors to nervous system regulation. She works as a dedicated partner, building personalized plans grounded in precision functional medicine to help you achieve peak performance and lasting health.</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="photo"><div class="ph-arc"></div><img src="https://contour.health/megan-tomlin.jpg" alt="Megan Tomlin, RD" onerror="this.style.display='none'; this.parentNode.querySelector('.initials').style.display='block';" /><span class="initials" style="display:none;">MT</span></div>
-        <div class="body">
-          <div class="role-eyebrow">Nutrition</div>
-          <h3>Megan Tomlin, RD</h3>
-          <div class="role">Registered Dietitian</div>
-          <p>Megan helps bridge the gap between functional and clinical nutrition, combining science, compassion, and real-life strategies to help you feel your best from the inside out. She is a registered dietitian who empowers clients to optimize their daily lives without compromising or wasting time. Whether you're looking to optimize your energy, health, or daily habits, Megan is here to make it simple, sustainable, and even delicious.</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="photo"><div class="ph-arc"></div><img src="https://contour.health/kristin-cunningham.jpg" alt="Kristin Cunningham, NP" onerror="this.style.display='none'; this.parentNode.querySelector('.initials').style.display='block';" /><span class="initials" style="display:none;">KC</span></div>
-        <div class="body">
-          <div class="role-eyebrow">Functional Medicine &amp; Skincare</div>
-          <h3>Kristin Cunningham, NP</h3>
-          <div class="role">Functional Medicine &amp; Skincare Expert</div>
-          <p>Kristin Cunningham is both a conventionally trained Nurse Practitioner and a functional medicine specialist with a passion for root-cause healing. She completed her undergraduate education at Johns Hopkins University and graduate training at Georgetown University. She began her career in family medicine and cardiology before discovering functional medicine.</p>
-          <p>With over 10 years of clinical experience, Kristin now specializes in helping teens and adults resolve acne and other skin conditions naturally by addressing the sources of underlying imbalances. Rather than relying solely on topical treatments or temporary fixes, her approach combines evidence-based medicine with functional medicine principles to create personalized, sustainable paths to clear skin and better overall health.</p>
-          <p>Kristin is a mother of five — including three teens and two toddlers — and lives with her family in Mount Pleasant. Faith and family are the center of her life, and she is an active member of their church and leads several women's gatherings.</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="photo"><div class="ph-arc"></div><img src="https://contour.health/ayden-rupp.jpg" alt="Ayden Rupp" onerror="this.style.display='none'; this.parentNode.querySelector('.initials').style.display='block';" /><span class="initials" style="display:none;">AR</span></div>
-        <div class="body">
-          <div class="role-eyebrow">Health Coaching</div>
-          <h3>Ayden Rupp</h3>
-          <div class="role">Practice Manager and Health Coach</div>
-          <p>Ayden brings a grounded, service-first approach to every interaction. With a Health Coaching Certificate from the Institute for Integrative Nutrition and as a certified yoga instructor, Ayden entered the health and wellness field in 2024 with a clear mission: make optimal health feel accessible, not overwhelming.</p>
-          <p>Ayden's coaching philosophy centers on simplicity and accountability. Whether guiding patients through lifestyle shifts or supporting their care journey from first contact, Ayden believes that lasting transformation happens when healthy living feels achievable — not like a second job. Expect honest conversations, firm support, and a curated experience designed to meet you where you are and move you toward your highest potential.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- BLOG -->
 <section class="block alt" id="blog">
@@ -510,7 +507,7 @@
     <div class="section-head">
       <span class="eyebrow">The Journal</span>
       <h2>Ideas worth your attention</h2>
-      <p>Perspectives on performance medicine, longevity, and a smarter, gentler approach to health — from Dr. O'Bryan.</p>
+      <p>Perspectives on functional performance medicine, longevity, and a smarter, gentler approach to health — from Dr. O'Bryan.</p>
     </div>
     <div class="posts">
       <a class="post" href="https://contour.health/blog/affordability.html">
@@ -534,7 +531,7 @@
       <a class="post" href="https://contour.health/blog/who-is-this-for.html">
         <div class="cat">Membership</div>
         <h3>Who is this membership right for?</h3>
-        <p>Three kinds of people this practice was built for — and how to know if a performance medicine membership fits your goals.</p>
+        <p>Three kinds of people this practice was built for — and how to know if a functional performance medicine membership fits your goals.</p>
         <span class="more">Read more →</span>
       </a>
       <a class="post" href="https://contour.health/blog/retainer-model.html">
@@ -566,8 +563,8 @@
       <span class="item"><span class="star">&#9733;</span> Our clinics</span>
     </div>
     <div id="coverage-map" class="map-wrap"></div>
-    <p class="coverage-statement">We diagnose and treat patients in 45 states.</p>
-    <p class="coverage-sub">In-person care also available in Nashville, TN and Charleston, SC.</p>
+    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Charleston, SC and Nashville, TN.</p>
+    <p class="coverage-sub">Telehealth nationwide where we practice, plus brick-and-mortar clinics in Charleston and Nashville.</p>
   </div>
 </section>
 
@@ -610,7 +607,7 @@
   ];
   var svg = d3.select('#coverage-map').append('svg')
     .attr('viewBox','0 0 900 560').attr('width','100%').attr('role','img')
-    .attr('aria-label','US map: Contour Health takes patients in 45 states, with clinics in Nashville, TN and Charleston, SC.');
+    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Charleston, SC and Nashville, TN.');
   var proj = d3.geoAlbersUsa().scale(1150).translate([450,275]);
   var path = d3.geoPath(proj);
   d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function (us) {
@@ -625,7 +622,7 @@
       var p = proj(c.coords); if (!p) return;
       g.append('circle').attr('cx',p[0]).attr('cy',p[1]).attr('r',9).attr('fill','#fff').attr('opacity',0.92);
       g.append('path').attr('d', star).attr('transform','translate('+p[0]+','+p[1]+')')
-        .attr('fill','#F26B4E').attr('stroke','#993C1D').attr('stroke-width',0.75);
+        .attr('fill','#E85A7A').attr('stroke','#7A2E4A').attr('stroke-width',0.75);
       g.append('text').attr('x',p[0]+c.dx).attr('y',p[1]+c.dy).attr('text-anchor',c.anchor)
         .attr('font-family',"'Outfit',sans-serif").attr('font-size','15px').attr('font-weight','500')
         .attr('fill','#2A2724').attr('stroke','#FBF8F3').attr('stroke-width','3').attr('paint-order','stroke')
@@ -637,10 +634,10 @@
 
 <script>
 (function(){
-  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #team .section-head, .member, #blog .section-head, .post, #coverage .section-head, .map-wrap, .coverage-statement, .coverage-sub, .cta-block';
+  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #blog .section-head, .post, #coverage .section-head, .map-wrap, .coverage-statement, .coverage-sub, .cta-block';
   var targets=[].slice.call(document.querySelectorAll(sel));
   targets.forEach(function(el){el.classList.add('ctr-reveal');});
-  ['.pillars .pillar','.team .member','.posts .post'].forEach(function(g){[].slice.call(document.querySelectorAll(g)).forEach(function(el,i){el.style.transitionDelay=(i*0.09)+'s';});});
+  ['.pillars .pillar','.posts .post'].forEach(function(g){[].slice.call(document.querySelectorAll(g)).forEach(function(el,i){el.style.transitionDelay=(i*0.09)+'s';});});
   if(!('IntersectionObserver' in window)){targets.forEach(function(el){el.classList.add('ctr-in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ctr-in');io.unobserve(e.target);}});},{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
   targets.forEach(function(el){io.observe(el);});
