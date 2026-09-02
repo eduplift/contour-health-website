@@ -3,35 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Membership &amp; Pricing — Contour Health</title>
-<meta name="description" content="Simple, transparent membership pricing. Two plans — Core and Core-MD — with no middle-men and no hidden markups. See exactly what's included and what it would cost à la carte." />
+<title>Metabolic Weight Loss — Contour Health</title>
+<meta name="description" content="Contour Health's comprehensive metabolic weight loss plan pairs GLP medications with a functional registered dietitian. Membership-based care in SC, TN, and 45 states." />
 <meta name="theme-color" content="#F5F2EC" />
-<link rel="canonical" href="https://contour.health/pricing.html" />
+<link rel="canonical" href="https://contour.health/metabolic.html" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Membership & Pricing — Contour Health" />
-<meta property="og:description" content="Two simple plans — Core and Core-MD. Transparent pricing, no middle-men, no hidden markups." />
-<meta property="og:url" content="https://contour.health/pricing.html" />
-<meta property="og:image" content="https://contour.health/dr-obryan.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Contour Health Membership",
-  "description": "Functional performance health membership blending functional, traditional, and longevity care.",
-  "brand": {"@type": "Brand", "name": "Contour Health"},
-  "offers": [
-    {"@type": "Offer", "name": "Core Membership", "price": "99", "priceCurrency": "USD", "url": "https://contour.health/pricing.html", "description": "Membership with an expert NP or PA. Billed monthly; 3-month minimum."},
-    {"@type": "Offer", "name": "Core-MD", "price": "249", "priceCurrency": "USD", "url": "https://contour.health/pricing.html", "description": "Concierge-level MD care with added functional, longevity, and performance components."}
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+
   :root {
     --paper:      #F5F2EC;
     --paper-2:    #EFE9DF;
@@ -176,6 +158,43 @@
     .incl-grid { grid-template-columns: 1fr; }
     .compare-table th:nth-child(2), .compare-table td.market { font-size:0.86rem; }
   }
+
+
+  .meta-hero { position:relative; overflow:hidden; padding: 88px 0 56px; text-align:center; }
+  .meta-hero .arc { position:absolute; border-radius:50%; pointer-events:none; background-repeat:no-repeat; background-position:center; background-size:cover; z-index:0; }
+  .meta-hero .a1 { width:340px; height:340px; left:-140px; top:-40px; background-image:url('orb-a1.png'); opacity:0.9; filter:saturate(1.2) brightness(1.06); }
+  .meta-hero .a2 { width:200px; height:200px; right:-70px; top:50px; background-image:url('orb-a3.png'); opacity:0.9; filter:saturate(1.25) brightness(1.08); }
+  .meta-hero .inner { position:relative; z-index:2; max-width:720px; margin:0 auto; }
+  .meta-hero h1 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); font-weight:600; margin: 14px auto 18px; letter-spacing:-0.01em; line-height:1.12; max-width:640px; }
+  .meta-hero h1 em { font-style:normal; color: var(--peach-deep); }
+  .meta-hero .lead { font-size:1.18rem; color:var(--ink-soft); max-width:560px; margin:0 auto 28px; }
+  .meta-hero .btn { position:relative; z-index:2; }
+  .rx-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1040px; margin:0 auto 40px; }
+  .rx-card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); padding:30px 26px; text-align:left; display:flex; flex-direction:column; }
+  .rx-card .name { font-size:1.35rem; font-weight:600; margin-bottom:6px; }
+  .rx-card .tag { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--peach-deep); font-weight:600; margin-bottom:16px; }
+  .rx-card .amount { font-size:1.85rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:8px; }
+  .rx-card .amount span { font-size:1rem; font-weight:500; color:var(--ink-mute); }
+  .rx-card .blurb { color:var(--ink-soft); font-size:0.96rem; margin-bottom:0; flex:1; }
+  .rx-note { max-width:820px; margin:0 auto 48px; text-align:center; font-size:1.02rem; color:var(--ink-soft); background:rgba(255,155,136,0.14); border:1px solid var(--line); border-radius:var(--radius); padding:18px 24px; }
+  .rx-note strong { color:var(--ink); }
+  .meta-grid { display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px; align-items:start; }
+  .meta-card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); padding:34px 32px; }
+  .meta-card h2 { font-size:1.35rem; margin:0 0 12px; }
+  .meta-card p { color:var(--ink-soft); margin-bottom:14px; }
+  .meta-card ul { list-style:none; margin:18px 0 0; }
+  .meta-card li { position:relative; padding:9px 0 9px 24px; color:var(--ink-soft); font-size:0.98rem; border-bottom:1px solid var(--line); }
+  .meta-card li:last-child { border-bottom:none; }
+  .meta-card li::before { content:""; position:absolute; left:0; top:16px; width:9px; height:9px; border-radius:50%; background:var(--peach); }
+  .form-card { background:#fff; border-radius:var(--radius); padding:26px 22px 16px; border:1px solid var(--line); }
+  .form-card h2 { font-size:1.25rem; margin-bottom:8px; }
+  .form-card .sub { color:var(--ink-soft); font-size:0.98rem; margin-bottom:18px; }
+  .disclaimer { margin-top:28px; font-size:0.88rem; color:var(--ink-mute); max-width:720px; margin-left:auto; margin-right:auto; text-align:center; }
+  @media (max-width:880px){
+    .meta-grid { grid-template-columns:1fr; }
+    .rx-grid { grid-template-columns:1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -188,164 +207,83 @@
       <div class="nav-links">
         <a href="index.html#philosophy">Philosophy</a>
         <a href="index.html#membership">Membership</a>
-        <a href="pricing.html" class="active">Pricing</a>
-        <a href="metabolic.html">Metabolic</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="metabolic.html" class="active">Metabolic</a>
         <a href="care-team.html">Care Team</a>
         <a href="index.html#blog">Journal</a>
-        <a class="btn" href="index.html#inquire">Start a Conversation</a>
+        <a class="btn" href="#inquire">I'm Interested</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="price-hero">
+<section class="meta-hero">
   <div class="arc a1"></div>
   <div class="arc a2"></div>
   <div class="wrap">
-    <span class="eyebrow">Membership &amp; Pricing</span>
-    <h1>One membership. <em>Everything</em> your health needs.</h1>
-    <p class="lead">Two simple plans, transparent pricing, and no middle-men taking a cut. Curious how we keep it this affordable? <a href="/blog/affordability.html">Read the story →</a></p>
+    <div class="inner">
+      <span class="eyebrow">Metabolic Health</span>
+      <h1>A <em>comprehensive</em> metabolic weight loss plan.</h1>
+      <p class="lead">Access to GLP medications alongside our Functional Registered Dietitian — inside the same Contour membership that already knows your full health picture.</p>
+      <a class="btn" href="#inquire">Get more information</a>
+    </div>
   </div>
 </section>
 
-<!-- TIERS -->
 <section class="block">
   <div class="wrap">
-    <div class="price-grid">
-
-      <!-- CORE -->
-      <div class="price-card">
-        <div class="tier-name">Core Membership</div>
-        <div class="tier-for">Expert functional, longevity &amp; primary care with one of our dedicated NPs or PAs.</div>
-        <div class="amount"><span class="num">$99</span><span class="per">/ month</span></div>
-        <div class="annual">Save 3% if paid annually</div>
-        <div class="tier-cta"><a class="btn" href="index.html#inquire">Get Started</a></div>
-        <div class="incl-label">What's included</div>
-        <ul class="feature-list">
-          <li><strong>60–90 minute</strong> functional evaluation</li>
-          <li><strong>Unlimited</strong> clinician messaging</li>
-          <li>Comprehensive care plan</li>
-          <li>Laboratory reviews &amp; ordering</li>
-          <li>Prescription management</li>
-          <li>Peptide consultation</li>
-          <li>GLP program <em>(if needed)</em></li>
-          <li>Transparent compounded medication pricing</li>
-          <li>Hormone consultation</li>
-          <li><strong>Unlimited</strong> follow-up appointments</li>
-          <li>15% discount on recommended supplements</li>
-          <li>Integrated FitBit tracking</li>
-          <li>Free care pathways</li>
-          <li>Free shared health-journaling program</li>
-          <li>Free educational content — and much more</li>
-        </ul>
+    <div class="section-head" style="margin-bottom:32px;">
+      <span class="eyebrow">Medication access</span>
+      <h2>Transparent starting prices</h2>
+      <p>Prescribed only when clinically appropriate after evaluation. Prices shown are for a three month supply and prices may vary on dose and shipment schedule.</p>
+    </div>
+    <div class="rx-grid">
+      <div class="rx-card">
+        <div class="tag">Option 1</div>
+        <div class="name">Semaglutide</div>
+        <div class="amount">as low as $89<span>/mo</span></div>
+        <p class="blurb">GLP medication access as part of your Contour metabolic plan, with clinician oversight.</p>
       </div>
-
-      <!-- CORE-MD -->
-      <div class="price-card featured">
-        <div class="tier-name">Core Membership&nbsp;–&nbsp;MD</div>
-        <div class="tier-for">Concierge-level MD care, plus functional, longevity &amp; performance support.</div>
-        <div class="amount"><span class="num">$249</span><span class="per">/ month</span></div>
-        <div class="annual">Save 3% if paid annually</div>
-        <div class="tier-cta"><a class="btn" href="index.html#inquire">Get Started</a></div>
-        <div class="incl-label" style="color:var(--ink); font-weight:700;">Everything in Core, plus</div>
-        <ul class="feature-list">
-          <li><strong>60–90 minute</strong> functional health evaluation <strong>with an MD</strong></li>
-          <li>1-hour functional nutritionist consultation</li>
-          <li>45-minute health coaching consultation</li>
-          <li>30-minute health coaching follow-up</li>
-          <li>Longevity consultation</li>
-          <li>Curated sub-specialist referral network</li>
-          <li><strong>Unlimited</strong> visits</li>
-          <li>Direct, same-day access</li>
-          <li>20% discount on recommended supplements</li>
-          <li><strong>Plus more…</strong></li>
-        </ul>
+      <div class="rx-card">
+        <div class="tag">Option 2</div>
+        <div class="name">Tirzepatide</div>
+        <div class="amount">as low as $110<span>/mo</span></div>
+        <p class="blurb">GLP medication access as part of your Contour metabolic plan, with clinician oversight.</p>
       </div>
-
+      <div class="rx-card">
+        <div class="tag">Option 3</div>
+        <div class="name">Other treatments</div>
+        <div class="amount">Custom<span></span></div>
+        <p class="blurb">Additional metabolic options tailored with your Contour clinician when another path fits better.</p>
+      </div>
     </div>
-
-    <p class="commit-note">Both plans include a <strong>$99 onboarding cost</strong> and a <strong>3-month minimum commitment</strong> so your clinician has the runway to build a plan, retest, and show real progress. <strong>Save 3%</strong> when you pay for a year up front.</p>
+    <p class="rx-note"><strong>Also included:</strong> a Functional Registered Dietitian custom supplement plan, <strong>10% off</strong> all recommended supplements, and <strong>shipping included</strong>.</p>
   </div>
-</section>
 
-<!-- INCLUDED IN EVERY MEMBERSHIP -->
-<section class="block alt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">In Every Membership</span>
-      <h2>What every member gets</h2>
-    </div>
-    <div class="incl-grid">
+  <div class="wrap meta-grid">
+    <div class="meta-card">
+      <h2>What's included</h2>
+      <p>This isn't a one-click prescription path. Contour builds a metabolic plan around you — clinician oversight, nutrition, and medication access when it's appropriate.</p>
       <ul>
-        <li>&ldquo;Cost-Plus&rdquo; drug pricing — GLPs typically $100+ less per month</li>
-        <li>Access to a functional RD</li>
-        <li>Access to health coaching</li>
-        <li>Discounted DEXA &amp; other testing</li>
-        <li>Full lab panels at discounted rates</li>
-      </ul>
-      <ul>
-        <li>Prior-authorization support for specialty medications</li>
-        <li>Bioidentical hormone access</li>
-        <li>Full integrated pharmacy network</li>
-        <li>Home delivery of medications where possible</li>
-        <li>In-person care where applicable</li>
-      </ul>
-      <ul>
-        <li>Real people to talk to for scheduling or questions</li>
-        <li>Metabolic optimization plan</li>
-        <li>Discounts with partner organizations</li>
-        <li>And more</li>
+        <li>Comprehensive metabolic weight loss plan</li>
+        <li>Access to GLP medications when clinically appropriate</li>
+        <li>Functional Registered Dietitian support</li>
+        <li>Functional Registered Dietitian custom supplement plan</li>
+        <li>10% discount on recommended supplements (shipping included)</li>
+        <li>Coordination with your Contour clinician</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="block">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">The Math</span>
-      <h2>What this would cost à la carte</h2>
-      <p>Pieced together from separate providers, the same care adds up fast. Here's the typical market price for each piece — and what you pay with Contour.</p>
-    </div>
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr><th>Service</th><th>Typical à la carte price</th><th>With Contour</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="svc">Functional medicine evaluation (60–90 min)</td><td class="market">~$400</td><td class="ours">Included</td></tr>
-          <tr><td class="svc">Longevity consultation (30 min)</td><td class="market">~$200</td><td class="ours">Included <span class="tag-core">Core-MD</span></td></tr>
-          <tr><td class="svc">Functional nutrition consultation</td><td class="market">~$175 / hour</td><td class="ours">Included <span class="tag-core">Core-MD</span></td></tr>
-          <tr><td class="svc">Concierge physician access</td><td class="market">$3,000–$10,000 / yr</td><td class="ours">Included <span class="tag-core">Core-MD</span></td></tr>
-          <tr><td class="svc">GLP medications</td><td class="market">$300–$500 / mo</td><td class="ours">$99–$199 / mo current average*</td></tr>
-          <tr><td class="svc">Hormone optimization program</td><td class="market">$200–$400 / mo</td><td class="ours">Included</td></tr>
-          <tr><td class="svc">Functional "care pathway"</td><td class="market">$5,000+</td><td class="ours">Included</td></tr>
-          <tr><td class="svc">Custom protocols</td><td class="market">Into the thousands</td><td class="ours">Included</td></tr>
-          <tr><td class="svc">Recommended supplements</td><td class="market">Full retail</td><td class="ours">15–20% off</td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:0.8rem; color:var(--ink-mute); margin-top:12px;">*Our current average for a 3-month supply.</p>
-
-      <div class="compare-total">
-        <div class="big">Family &amp; Corporate plans are also available.</div>
-        <div class="sub">Email <a href="mailto:info@contour.health" style="color:var(--peach-deep); font-weight:600;">info@contour.health</a> for more information about these custom plans.</div>
+    <div class="meta-card" id="inquire">
+      <div class="form-card" style="border:none;padding:0;">
+        <h2>Want more information?</h2>
+        <p class="sub">Same short form as the rest of the site. Tell us a little about yourself and we'll follow up.</p>
+        <script src="https://js.hsforms.net/forms/embed/51598042.js" defer></script>
+        <div class="hs-form-frame" data-region="na1" data-form-id="fc0069f1-d0f1-4c8b-93c3-a41a0a06c155" data-portal-id="51598042"></div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- CTA -->
-<section class="block" id="inquire">
   <div class="wrap">
-    <div class="cta-block">
-      <div class="c-arc c1"></div>
-      <div class="c-arc c2"></div>
-      <h2>Find the plan that fits</h2>
-      <p>Not sure which membership is right for you? It starts with a short, relaxed conversation — we'll take it from there.</p>
-      <a class="btn" href="index.html#inquire">Get Started</a>
-    </div>
+    <p class="disclaimer">This page does not provide medical advice. Semaglutide, tirzepatide, and other treatments are prescribed only when appropriate after clinical evaluation. Individual results vary. Contour Health is a hybrid clinic with in-person care in Charleston, SC and Nashville, TN, and virtual care across 45 states.</p>
   </div>
 </section>
 
@@ -358,7 +296,6 @@
     </div>
   </div>
 </footer>
-
 
 <script>
 (function(){
