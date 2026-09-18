@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18412496957"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18412496957');
+</script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Metabolic Weight Loss — Contour Health</title>
@@ -41,8 +50,6 @@
       radial-gradient(circle at 18% 12%, rgba(255,155,136,0.18), transparent 30%),
       radial-gradient(circle at 85% 6%, rgba(47,212,196,0.12), transparent 26%),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-    
-    
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -186,9 +193,18 @@
   .meta-card li { position:relative; padding:9px 0 9px 24px; color:var(--ink-soft); font-size:0.98rem; border-bottom:1px solid var(--line); }
   .meta-card li:last-child { border-bottom:none; }
   .meta-card li::before { content:""; position:absolute; left:0; top:16px; width:9px; height:9px; border-radius:50%; background:var(--peach); }
-  .form-card { background:#fff; border-radius:var(--radius); padding:26px 22px 16px; border:1px solid var(--line); }
-  .form-card h2 { font-size:1.25rem; margin-bottom:8px; }
-  .form-card .sub { color:var(--ink-soft); font-size:0.98rem; margin-bottom:18px; }
+
+  /* Inquire CTA card (replaces the embedded form) */
+  .inquire-card { position:relative; overflow:hidden; background:var(--ink); border-color:var(--ink); color:var(--paper); scroll-margin-top:96px; }
+  .inquire-card::before { content:""; position:absolute; width:240px; height:240px; border-radius:50%; background:var(--peach-deep); opacity:0.3; right:-90px; bottom:-110px; pointer-events:none; }
+  .inquire-card::after { content:""; position:absolute; width:110px; height:110px; border-radius:50%; background:var(--citron); opacity:0.35; right:-30px; top:-40px; pointer-events:none; }
+  .inquire-card > * { position:relative; z-index:1; }
+  .inquire-card .eyebrow { color:var(--peach); display:block; margin-bottom:10px; }
+  .inquire-card h2 { font-size:1.6rem; }
+  .inquire-card p { color:rgba(245,242,236,0.78); margin-bottom:24px; }
+  .inquire-card .btn { display:block; width:100%; text-align:center; font-size:1.02rem; padding:16px 26px; }
+  .inquire-card .fine { font-size:0.84rem; color:rgba(245,242,236,0.55); margin:14px 0 0; text-align:center; }
+
   .disclaimer { margin-top:28px; font-size:0.88rem; color:var(--ink-mute); max-width:720px; margin-left:auto; margin-right:auto; text-align:center; }
   @media (max-width:880px){
     .meta-grid { grid-template-columns:1fr; }
@@ -211,7 +227,7 @@
         <a href="metabolic.html" class="active">Metabolic</a>
         <a href="care-team.html">Care Team</a>
         <a href="index.html#blog">Journal</a>
-        <a class="btn" href="#inquire">I'm Interested</a>
+        <a class="btn" href="metabolic-inquiry.html">I'm Interested</a>
       </div>
     </nav>
   </div>
@@ -225,7 +241,7 @@
       <span class="eyebrow">Metabolic Health</span>
       <h1>A <em>comprehensive</em> metabolic weight loss plan.</h1>
       <p class="lead">Access to GLP medications alongside our Functional Registered Dietitian — no membership required. Pricing with Contour membership is typically 30%+ cheaper.</p>
-      <a class="btn" href="#inquire">Get more information</a>
+      <a class="btn" href="metabolic-inquiry.html">Get more information</a>
     </div>
   </div>
 </section>
@@ -273,15 +289,15 @@
         <li>Coordination with your Contour clinician</li>
       </ul>
     </div>
-    <div class="meta-card" id="inquire">
-      <div class="form-card" style="border:none;padding:0;">
-        <h2>Want more information?</h2>
-        <p class="sub">Book a time below — no membership required to get started.</p>
-        <div class="healthie-embed" style="width:100%; min-height:600px;">
-          <iframe src="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=15533712&embed_form_id=3065301&form_only=true&primary_color=4A9625" style="width:100%; height:100%; min-height:600px; border:0px"></iframe>
-          <p style="margin-top:10px;font-size:0.85rem;color:var(--ink-mute);"> Booking Provided by <a href="https://gethealthie.com">Healthie</a> </p>
-        </div>
-      </div>
+
+    <!-- Embedded Healthie form removed; it now lives on metabolic-inquiry.html.
+         id="inquire" kept so any existing links to metabolic.html#inquire still land here. -->
+    <div class="meta-card inquire-card" id="inquire">
+      <span class="eyebrow">Get started</span>
+      <h2>Want more information?</h2>
+      <p>Fill out a short form to get started — no membership required.</p>
+      <a class="btn" href="metabolic-inquiry.html">Start the form &rarr;</a>
+      <p class="fine">Secure form powered by Healthie</p>
     </div>
   </div>
   <div class="wrap">
