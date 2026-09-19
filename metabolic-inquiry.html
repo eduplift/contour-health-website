@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18412496957"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18412496957');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Get Started — Metabolic Weight Loss — Contour Health</title>
+<meta name="description" content="Get started with Contour Health's metabolic weight loss plan. No membership required." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#F5F2EC" />
+<link rel="canonical" href="https://contour.health/metabolic-inquiry.html" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:      #F5F2EC;
+    --card:       #FFFFFF;
+    --ink:        #2A2724;
+    --ink-soft:   #5F584F;
+    --ink-mute:   #8C847A;
+    --peach:      #FF9B88;
+    --peach-deep: #FF5A8A;
+    --coral:      #FF4F70;
+    --citron:     #2FD4C4;
+    --line:       #E3DCCF;
+    --radius:     22px;
+    --maxw:       860px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /*
+    ONE SCROLL CONTEXT.
+    The page itself is locked to exactly the viewport height and never scrolls.
+    The iframe takes all remaining space, so the only thing that scrolls is the form.
+    (A cross-origin iframe can't be auto-sized to its content with CSS, so we do the
+    opposite: size it to the screen.)
+  */
+  html, body { height: 100%; }
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;   /* fallback for older browsers */
+    height: 100dvh;  /* tracks mobile browser toolbars showing/hiding */
+    overflow: hidden;
+  }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; }
+
+  /* Slim header */
+  .bar { flex: none; border-bottom: 1px solid var(--line); background: var(--paper); }
+  .bar-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.08rem; letter-spacing: 0.02em; text-decoration: none; }
+  .brand .mark { width: 26px; height: 26px; border-radius: 50%; background: var(--peach); position: relative; flex: none; box-shadow: inset 0 0 0 4px var(--coral); }
+  .brand .mark::after { content:""; position:absolute; right:-4px; top:5px; width: 12px; height: 12px; border-radius: 50%; background: var(--citron); }
+  .back { font-size: 0.92rem; color: var(--ink-soft); text-decoration: none; padding: 8px 0; }
+  .back:hover { color: var(--ink); }
+
+  /* Short intro */
+  .intro { flex: none; padding-top: 18px; padding-bottom: 14px; }
+  .intro h1 { font-size: 1.45rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+  .intro p { font-size: 0.95rem; color: var(--ink-soft); margin-top: 4px; }
+
+  /* Form frame fills everything that's left */
+  .frame { flex: 1 1 auto; min-height: 0; display: flex; }
+  .frame-card { flex: 1; min-height: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .frame-card iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+  /* Credit + fallback link */
+  .credit { flex: none; font-size: 0.8rem; color: var(--ink-mute); text-align: center; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); }
+  .credit a { color: var(--ink-soft); }
+
+  /* Phones: give the form every pixel */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 12px; }
+    .intro { padding-top: 12px; padding-bottom: 10px; }
+    .intro h1 { font-size: 1.2rem; }
+    .intro p { display: none; }
+    .frame-card { border-radius: 14px; }
+  }
+  /* Landscape phones / very short screens: drop the intro entirely */
+  @media (max-height: 520px) {
+    .intro { display: none; }
+    .bar-inner { height: 48px; }
+    .frame { padding-top: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="index.html"><span class="mark"></span> Contour Health</a>
+    <a class="back" href="metabolic.html">&larr; Back</a>
+  </div>
+</header>
+
+<div class="wrap intro">
+  <h1>Metabolic weight loss — get started</h1>
+  <p>No membership required.</p>
+</div>
+
+<main class="wrap frame">
+  <div class="frame-card">
+    <iframe
+      title="Contour Health metabolic weight loss intake form"
+      src="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=15533712&embed_form_id=3065301&form_only=true&primary_color=4A9625"
+      loading="eager"></iframe>
+  </div>
+</main>
+
+<p class="credit">
+  Form provided by <a href="https://gethealthie.com" target="_blank" rel="noopener">Healthie</a> ·
+  Trouble loading? <a href="https://secure.gethealthie.com/appointments/embed_appt?dietitian_id=15533712&embed_form_id=3065301&form_only=true&primary_color=4A9625" target="_blank" rel="noopener">Open the form directly</a>
+</p>
+
+</body>
+</html>
