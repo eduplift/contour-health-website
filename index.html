@@ -12,42 +12,119 @@
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contour Health — Functional Performance Health, Made Personal</title>
-<meta name="description" content="A private, expert-led practice built around small, personal panels. Functional, traditional, and longevity medicine — thoughtfully tailored to how you want to live." />
+<title>Contour Health | Virtual Primary Care &amp; Metabolic Health, Nashville TN</title>
+<meta name="description" content="Contour Health is a Nashville, TN virtual primary care and metabolic health practice — functional performance health with a small, personal care team." />
 <meta name="theme-color" content="#F5F2EC" />
 <link rel="canonical" href="https://contour.health/" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:site_name" content="Contour Health" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Contour Health | Virtual Primary Care &amp; Metabolic Health, Nashville TN" />
+<meta property="og:description" content="Contour Health is a Nashville, TN virtual primary care and metabolic health practice — functional performance health with a small, personal care team." />
+<meta property="og:url" content="https://contour.health/" />
+<meta property="og:image" content="https://contour.health/dr-obryan.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contour Health | Virtual Primary Care &amp; Metabolic Health, Nashville TN" />
+<meta name="twitter:description" content="Contour Health is a Nashville, TN virtual primary care and metabolic health practice — functional performance health with a small, personal care team." />
+<meta name="twitter:image" content="https://contour.health/dr-obryan.jpg" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MedicalBusiness",
+      "@type": [
+        "MedicalBusiness",
+        "MedicalClinic"
+      ],
       "@id": "https://contour.health/#practice",
       "name": "Contour Health",
       "alternateName": "Contour Performance Health",
-      "description": "A private, expert-led functional performance health practice blending functional, traditional, and longevity medicine into one personalized plan.",
+      "description": "Contour Health is a Nashville, Tennessee virtual primary care and metabolic health practice offering functional performance health, blending functional, traditional, and longevity medicine into one personalized plan.",
       "url": "https://contour.health/",
       "image": "https://contour.health/dr-obryan.jpg",
       "logo": "https://contour.health/apple-touch-icon.png",
       "priceRange": "$99+ per month",
-      "medicalSpecialty": ["PreventiveMedicine", "PrimaryCare"],
-      "areaServed": {"@type": "Country", "name": "United States"},
-      "founder": {"@id": "https://contour.health/#drobryan"},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4017 Hillsboro Pike Suite 418",
+        "addressLocality": "Nashville",
+        "addressRegion": "TN",
+        "postalCode": "37215",
+        "addressCountry": "US"
+      },
+      "medicalSpecialty": [
+        "PreventiveMedicine",
+        "PrimaryCare"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "department": {
+        "@type": [
+          "MedicalBusiness",
+          "MedicalClinic"
+        ],
+        "name": "Contour Health – Charleston, SC",
+        "parentOrganization": {
+          "@id": "https://contour.health/#practice"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Charleston",
+          "addressRegion": "SC",
+          "addressCountry": "US"
+        }
+      },
+      "founder": {
+        "@id": "https://contour.health/#drobryan"
+      },
       "employee": [
-        {"@id": "https://contour.health/#drobryan"},
-        {"@type": "Person", "name": "Kristen Toth, PA-C", "jobTitle": "Physician Assistant"},
-        {"@type": "Person", "name": "Megan Tomlin, RD", "jobTitle": "Registered Dietitian"},
-        {"@type": "Person", "name": "Kristin Cunningham, NP", "jobTitle": "Functional Medicine & Skincare Expert"},
-        {"@type": "Person", "name": "Ayden Rupp", "jobTitle": "Practice Manager and Health Coach"}
+        {
+          "@id": "https://contour.health/#drobryan"
+        },
+        {
+          "@id": "https://contour.health/kristen-toth.html#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Megan Tomlin, RD",
+          "jobTitle": "Registered Dietitian"
+        },
+        {
+          "@type": "Person",
+          "name": "Kristin Cunningham, NP",
+          "jobTitle": "Functional Medicine & Skincare Expert"
+        },
+        {
+          "@type": "Person",
+          "name": "Ayden Rupp",
+          "jobTitle": "Practice Manager and Health Coach"
+        }
       ],
       "availableService": [
-        {"@type": "MedicalProcedure", "name": "Functional Medicine Evaluation"},
-        {"@type": "MedicalProcedure", "name": "Longevity & Healthspan Evaluation"},
-        {"@type": "MedicalProcedure", "name": "Traditional Primary Care"},
-        {"@type": "MedicalProcedure", "name": "Comprehensive Metabolic Profiling"},
-        {"@type": "MedicalProcedure", "name": "VO2 Max & DEXA Body Composition Testing"}
+        {
+          "@type": "MedicalProcedure",
+          "name": "Functional Medicine Evaluation"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Longevity & Healthspan Evaluation"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Traditional Primary Care"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Comprehensive Metabolic Profiling"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "VO2 Max & DEXA Body Composition Testing"
+        }
       ]
     },
     {
@@ -58,7 +135,9 @@
       "jobTitle": "Founding Clinician",
       "description": "Functional & Performance Health",
       "image": "https://contour.health/dr-obryan.jpg",
-      "worksFor": {"@id": "https://contour.health/#practice"}
+      "worksFor": {
+        "@id": "https://contour.health/#practice"
+      }
     },
     {
       "@type": "WebSite",
@@ -66,7 +145,9 @@
       "name": "Contour Health",
       "url": "https://contour.health/",
       "inLanguage": "en-US",
-      "publisher": {"@id": "https://contour.health/#practice"}
+      "publisher": {
+        "@id": "https://contour.health/#practice"
+      }
     }
   ]
 }
@@ -403,6 +484,7 @@
         <p>Your membership gives you access to a comprehensive analysis, a functional medicine consult, a longevity consult, a registered dietitian consultation, traditional primary care, and member pricing on supplements, labs, and more. We'll shape the right plan together — it starts with a short, relaxed conversation, and we take it from there.</p>
         <a class="btn" href="#inquire">I'm Interested</a>
         <p class="note">How are we so affordable? Check out <a href="https://contour.health/blog/affordability.html" style="color:var(--peach-deep);font-weight:600;">the blog</a> for details!</p>
+        <p class="note">Looking for a root-cause approach? Meet <a href="kristen-toth.html#functional-medicine" style="color:var(--peach-deep);font-weight:600;">functional medicine with Kristen Toth, PA-C</a>.</p>
       </div>
       <div class="member-card">
         <h3 style="font-size:1.15rem; margin-bottom:18px;">What's available to you</h3>
@@ -543,6 +625,7 @@
     <div class="legal">
       © 2026 Contour Health. All rights reserved.<br />
       4017 Hillsboro Pike Suite 418, Nashville, TN 37215<br />
+      <a href="care-team.html">Care Team</a> · <a href="kristen-toth.html">Kristen Toth</a><br />
       This site does not provide medical advice. Please consult your clinician for personalized recommendations.
     </div>
   </div>
