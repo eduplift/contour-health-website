@@ -274,6 +274,15 @@
   .map-legend .sw { width:15px; height:15px; border-radius:4px; display:inline-block; }
   .map-legend .star { color:var(--coral); font-size:17px; line-height:1; }
   .map-wrap { max-width:880px; margin:0 auto; }
+  .coverage-grid { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:32px; align-items:center; max-width:var(--maxw); margin:0 auto; }
+  .coverage-grid .map-wrap { max-width:none; margin:0; }
+  .loc-list { list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+  .loc-list li { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px 16px 44px; position:relative; }
+  .loc-list li::before { content:"\2605"; position:absolute; left:16px; top:15px; color:#E85A7A; font-size:1.05rem; }
+  .loc-list h3 { margin:0 0 4px; font-size:1.05rem; font-weight:600; color:var(--ink); }
+  .loc-list address { font-style:normal; color:var(--ink-soft); font-size:.95rem; line-height:1.45; }
+  .loc-list .loc-note { color:var(--ink-mute); font-size:.85rem; font-style:italic; }
+  @media (max-width:860px) { .coverage-grid { grid-template-columns:1fr; gap:22px; } .loc-list { max-width:520px; margin:0 auto; width:100%; } }
   .map-wrap svg { width:100%; height:auto; display:block; }
   .coverage-statement { text-align:center; font-size:clamp(1.3rem,2.7vw,1.75rem); font-weight:600; color:var(--ink); max-width:780px; margin:30px auto 8px; letter-spacing:-0.01em; }
   .coverage-sub { text-align:center; color:var(--ink-soft); font-size:1.02rem; margin:0 auto; }
@@ -514,9 +523,29 @@
       <span class="item"><span class="sw" style="background:#E7DFD2; border:0.5px solid #CFC6B5;"></span> Coming soon</span>
       <span class="item"><span class="star">&#9733;</span> Our clinics</span>
     </div>
-    <div id="coverage-map" class="map-wrap"></div>
-    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Charleston, SC and Nashville, TN.</p>
-    <p class="coverage-sub">Telehealth nationwide where we practice, plus brick-and-mortar clinics in Charleston and Nashville.</p>
+    <div class="coverage-grid">
+      <div id="coverage-map" class="map-wrap"></div>
+      <ul class="loc-list" aria-label="Contour Health clinic locations">
+        <li>
+          <h3>Contour Health Nashville</h3>
+          <!-- TODO(Edward): confirm suite number (418 or 310) -->
+          <address>4017 Hillsboro Pike, <span class="loc-note">Suite TBD</span><br />Nashville, TN 37215</address>
+        </li>
+        <li>
+          <h3>Contour Health Mt. Pleasant</h3>
+          <!-- TODO(Edward): confirm address (from lease: 728 South Shelmore Boulevard #102, Mount Pleasant, SC 29464) -->
+          <address>728 South Shelmore Blvd #102<br />Mt. Pleasant, SC 29464<br /><span class="loc-note">Address pending confirmation</span></address>
+        </li>
+        <li>
+          <h3>Contour Health Beaufort</h3>
+          <!-- TODO(Edward): add Beaufort street address -->
+          <address>Beaufort, SC<br /><span class="loc-note">Street address coming soon</span></address>
+          <div class="loc-note">With Dorri Miller, NP</div>
+        </li>
+      </ul>
+    </div>
+    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Nashville, TN, Mt. Pleasant, SC and Beaufort, SC.</p>
+    <p class="coverage-sub">Telehealth nationwide where we practice, plus brick-and-mortar clinics in Nashville, Mt. Pleasant and Beaufort.</p>
   </div>
 </section>
 
@@ -542,6 +571,7 @@
     <div class="brand"><span class="mark"></span> Contour Health</div>
     <div class="legal">
       © 2026 Contour Health. All rights reserved.<br />
+      <!-- TODO(Edward): confirm Nashville suite number (418 or 310) -->
       4017 Hillsboro Pike Suite 418, Nashville, TN 37215<br />
       This site does not provide medical advice. Please consult your clinician for personalized recommendations.
     </div>
@@ -556,11 +586,12 @@
   var NOT_SERVING = {'Hawaii':1,'Alaska':1,'Connecticut':1,'Oregon':1,'New Mexico':1,'District of Columbia':1};
   var clinics = [
     {name:'Nashville, TN', coords:[-86.7816, 36.1627], dx:9, dy:-11, anchor:'start'},
-    {name:'Charleston, SC', coords:[-79.9311, 32.7765], dx:10, dy:15, anchor:'start'}
+    {name:'Mt. Pleasant, SC', coords:[-79.8628, 32.7941], dx:11, dy:-9, anchor:'start'},
+    {name:'Beaufort, SC', coords:[-80.6698, 32.4316], dx:-11, dy:17, anchor:'end'}
   ];
   var svg = d3.select('#coverage-map').append('svg')
     .attr('viewBox','0 0 900 560').attr('width','100%').attr('role','img')
-    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Charleston, SC and Nashville, TN.');
+    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Nashville, TN, Mt. Pleasant, SC and Beaufort, SC.');
   var proj = d3.geoAlbersUsa().scale(1150).translate([450,275]);
   var path = d3.geoPath(proj);
   d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function (us) {
@@ -587,7 +618,7 @@
 
 <script>
 (function(){
-  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #blog .section-head, .post, #coverage .section-head, .map-wrap, .coverage-statement, .coverage-sub, .cta-block';
+  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #blog .section-head, .post, #coverage .section-head, .map-wrap, .loc-list, .coverage-statement, .coverage-sub, .cta-block';
   var targets=[].slice.call(document.querySelectorAll(sel));
   targets.forEach(function(el){el.classList.add('ctr-reveal');});
   ['.pillars .pillar','.posts .post'].forEach(function(g){[].slice.call(document.querySelectorAll(g)).forEach(function(el,i){el.style.transitionDelay=(i*0.09)+'s';});});
