@@ -39,7 +39,6 @@
         {"@id": "https://contour.health/#drobryan"},
         {"@type": "Person", "name": "Kristen Toth, PA-C", "jobTitle": "Physician Assistant"},
         {"@type": "Person", "name": "Megan Tomlin, RD", "jobTitle": "Registered Dietitian"},
-        {"@type": "Person", "name": "Kristin Cunningham, NP", "jobTitle": "Functional Medicine & Skincare Expert"},
         {"@type": "Person", "name": "Ayden Rupp", "jobTitle": "Practice Manager and Health Coach"}
       ],
       "availableService": [
@@ -274,6 +273,17 @@
   .map-legend .sw { width:15px; height:15px; border-radius:4px; display:inline-block; }
   .map-legend .star { color:var(--coral); font-size:17px; line-height:1; }
   .map-wrap { max-width:880px; margin:0 auto; }
+  .coverage-grid { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:32px; align-items:center; max-width:var(--maxw); margin:0 auto; }
+  .coverage-grid .map-wrap { max-width:none; margin:0; }
+  .loc-list { list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+  .loc-list li { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px 16px 44px; position:relative; }
+  .loc-list li::before { content:"\2605"; position:absolute; left:16px; top:15px; color:#E85A7A; font-size:1.05rem; }
+  .loc-list h3 { margin:0 0 4px; font-size:1.05rem; font-weight:600; color:var(--ink); }
+  .loc-list address { font-style:normal; color:var(--ink-soft); font-size:.95rem; line-height:1.45; }
+  .loc-list li.loc-foot { background:none; border:0; border-radius:0; padding:0 2px; color:var(--ink-mute); font-size:.88rem; }
+  .loc-list li.loc-foot::before { content:none; }
+  .loc-list .loc-note { color:var(--ink-mute); font-size:.85rem; font-style:italic; }
+  @media (max-width:860px) { .coverage-grid { grid-template-columns:1fr; gap:22px; } .loc-list { max-width:520px; margin:0 auto; width:100%; } }
   .map-wrap svg { width:100%; height:auto; display:block; }
   .coverage-statement { text-align:center; font-size:clamp(1.3rem,2.7vw,1.75rem); font-weight:600; color:var(--ink); max-width:780px; margin:30px auto 8px; letter-spacing:-0.01em; }
   .coverage-sub { text-align:center; color:var(--ink-soft); font-size:1.02rem; margin:0 auto; }
@@ -332,7 +342,7 @@
         <a href="metabolic.html">Metabolic</a>
         <a href="care-team.html">Care Team</a>
         <a href="#blog">Journal</a>
-        <a class="btn" href="#inquire">I'm Interested</a>
+        <a class="btn" href="https://book.contour.health">I'm Interested</a>
       </div>
     </nav>
   </div>
@@ -352,7 +362,7 @@
       <h1>Medicine built <em>around you</em> — not around a protocol.</h1>
       <p class="lead">A private, expert-led practice kept intentionally small, so your clinician has the time to truly know you. Functional, traditional, and longevity medicine, woven into one plan that fits your life.</p>
       <div class="hero-cta">
-        <a class="btn" href="#inquire">Get Started</a>
+        <a class="btn" href="https://book.contour.health">Get Started</a>
         <a class="btn ghost" href="#philosophy">How We Practice</a>
       </div>
     </div>
@@ -401,7 +411,7 @@
         <a class="tag" href="pricing.html" style="text-decoration:none;">Plans from $99/month →</a>
         <h3>Your seat at the table</h3>
         <p>Your membership gives you access to a comprehensive analysis, a functional medicine consult, a longevity consult, a registered dietitian consultation, traditional primary care, and member pricing on supplements, labs, and more. We'll shape the right plan together — it starts with a short, relaxed conversation, and we take it from there.</p>
-        <a class="btn" href="#inquire">I'm Interested</a>
+        <a class="btn" href="https://book.contour.health">I'm Interested</a>
         <p class="note">How are we so affordable? Check out <a href="https://contour.health/blog/affordability.html" style="color:var(--peach-deep);font-weight:600;">the blog</a> for details!</p>
       </div>
       <div class="member-card">
@@ -514,9 +524,26 @@
       <span class="item"><span class="sw" style="background:#E7DFD2; border:0.5px solid #CFC6B5;"></span> Coming soon</span>
       <span class="item"><span class="star">&#9733;</span> Our clinics</span>
     </div>
-    <div id="coverage-map" class="map-wrap"></div>
-    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Charleston, SC and Nashville, TN.</p>
-    <p class="coverage-sub">Telehealth nationwide where we practice, plus brick-and-mortar clinics in Charleston and Nashville.</p>
+    <div class="coverage-grid">
+      <div id="coverage-map" class="map-wrap"></div>
+      <ul class="loc-list" aria-label="Contour Health clinic locations">
+        <li>
+          <h3>Contour Health Mt. Pleasant</h3>
+          <address>728 South Shelmore Blvd #102<br />Mt. Pleasant, SC 29464</address>
+        </li>
+        <li>
+          <h3>Contour Health Nashville</h3>
+          <address>4017 Hillsboro Pike Suite 418<br />Nashville, TN 37215</address>
+        </li>
+        <li>
+          <h3>Contour Health Port Royal</h3>
+          <address>2206 Mossy Oaks Road, Port Royal, SC 29935</address>
+          <div class="loc-note">With Dorri Miller, NP</div>
+        </li>
+        <li class="loc-foot">All locations are by appointment only.</li>
+      </ul>
+    </div>
+    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Mt. Pleasant, SC, Nashville, TN and Port Royal, SC.</p>
   </div>
 </section>
 
@@ -556,11 +583,12 @@
   var NOT_SERVING = {'Hawaii':1,'Alaska':1,'Connecticut':1,'Oregon':1,'New Mexico':1,'District of Columbia':1};
   var clinics = [
     {name:'Nashville, TN', coords:[-86.7816, 36.1627], dx:9, dy:-11, anchor:'start'},
-    {name:'Charleston, SC', coords:[-79.9311, 32.7765], dx:10, dy:15, anchor:'start'}
+    {name:'Mt. Pleasant, SC', coords:[-79.8628, 32.7941], dx:11, dy:-9, anchor:'start'},
+    {name:'Port Royal, SC', coords:[-80.693, 32.379], dx:-11, dy:17, anchor:'end'}
   ];
   var svg = d3.select('#coverage-map').append('svg')
     .attr('viewBox','0 0 900 560').attr('width','100%').attr('role','img')
-    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Charleston, SC and Nashville, TN.');
+    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Mt. Pleasant, SC, Nashville, TN and Port Royal, SC.');
   var proj = d3.geoAlbersUsa().scale(1150).translate([450,275]);
   var path = d3.geoPath(proj);
   d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function (us) {
@@ -587,7 +615,7 @@
 
 <script>
 (function(){
-  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #blog .section-head, .post, #coverage .section-head, .map-wrap, .coverage-statement, .coverage-sub, .cta-block';
+  var sel='#philosophy .section-head, .pillar, .quote, #membership .section-head, .member-card, #blog .section-head, .post, #coverage .section-head, .map-wrap, .loc-list, .coverage-statement, .coverage-sub, .cta-block';
   var targets=[].slice.call(document.querySelectorAll(sel));
   targets.forEach(function(el){el.classList.add('ctr-reveal');});
   ['.pillars .pillar','.posts .post'].forEach(function(g){[].slice.call(document.querySelectorAll(g)).forEach(function(el,i){el.style.transitionDelay=(i*0.09)+'s';});});
