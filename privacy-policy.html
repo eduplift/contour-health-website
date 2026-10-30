@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18412496957"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18412496957');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Contour Health</title>
+<meta name="description" content="Contour Health website privacy policy." />
+<meta name="theme-color" content="#F5F2EC" />
+<link rel="canonical" href="https://contour.health/privacy-policy" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Privacy Policy — Contour Health" />
+<meta property="og:url" content="https://contour.health/privacy-policy" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+
+  :root {
+    --paper:      #F5F2EC;
+    --paper-2:    #EFE9DF;
+    --card:       #FFFFFF;
+    --ink:        #2A2724;
+    --ink-soft:   #5F584F;
+    --ink-mute:   #8C847A;
+    --peach:      #FF9B88;
+    --peach-deep: #FF5A8A;
+    --coral:      #FF4F70;
+    --citron:     #2FD4C4;
+    --line:       #E3DCCF;
+    --radius:     22px;
+    --radius-lg:  34px;
+    --maxw:       1120px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(255,155,136,0.18), transparent 30%),
+      radial-gradient(circle at 85% 6%, rgba(47,212,196,0.12), transparent 26%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    
+    
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  h1, h2, h3 { line-height: 1.12; font-weight: 600; letter-spacing: -0.01em; }
+  .eyebrow { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 600; color: var(--peach-deep); }
+  a { color: inherit; }
+
+  /* Nav */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(245,242,236,0.82); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1.18rem; letter-spacing: 0.02em; }
+  .brand .mark { width: 30px; height: 30px; border-radius: 50%; background: var(--peach); position: relative; flex: none; box-shadow: inset 0 0 0 5px var(--coral); }
+  .brand .mark::after { content:""; position:absolute; right:-4px; top:6px; width: 14px; height: 14px; border-radius: 50%; background: var(--citron); }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a { font-size: 0.93rem; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); font-weight: 600; }
+  .btn { display: inline-block; background: var(--coral); color: #fff; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; transition: transform .15s ease, background .2s ease; box-shadow: 0 8px 20px -8px rgba(255,79,112,0.55); }
+  .btn:hover { background: var(--peach-deep); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--ink); box-shadow: none; border: 1.5px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .nav-links .btn { color:#fff; }
+  .nav-toggle { display:none; background:var(--card); border:1px solid var(--line); border-radius:12px; width:44px; height:44px; cursor:pointer; padding:0 11px; flex-direction:column; justify-content:center; gap:5px; align-items:stretch; }
+  .nav-toggle span { display:block; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s ease, opacity .2s ease; }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  /* Legal pages */
+  .legal-hero { position: relative; overflow: hidden; padding: 72px 0 24px; }
+  .legal-hero .arc { position:absolute; border-radius:50%; pointer-events:none; }
+  .legal-hero .a1 { width:340px; height:340px; left:-130px; top:-70px; background:url('/orb-a1.png') center/cover no-repeat; opacity:0.95; filter:saturate(1.2) brightness(1.06); }
+  .legal-hero .a2 { width:180px; height:180px; right:-30px; top:20px; background:url('/orb-a3.png') center/cover no-repeat; opacity:0.95; filter:saturate(1.25) brightness(1.08); }
+  .legal-hero .inner { position:relative; z-index:1; max-width:760px; margin:0 auto; }
+  .legal-hero h1 { font-size: clamp(2rem, 4.4vw, 3rem); margin: 16px 0 14px; }
+  .legal-hero .effective { color: var(--ink-mute); font-size: 0.95rem; }
+  article.legal-body { max-width: 760px; margin: 0 auto; padding: 10px 0 24px; }
+  article.legal-body p { font-size: 1.05rem; color: var(--ink-soft); margin: 0 0 18px; }
+  article.legal-body h2 { font-size: 1.45rem; font-weight: 600; letter-spacing: -0.01em; margin: 40px 0 12px; color: var(--ink); }
+  article.legal-body ul { list-style: none; margin: 0 0 22px; padding: 0; }
+  article.legal-body li { position: relative; padding: 8px 0 8px 26px; font-size: 1.02rem; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+  article.legal-body li::before { content:""; position:absolute; left:0; top:17px; width:9px; height:9px; border-radius:50%; background: var(--peach); }
+  article.legal-body a { color: var(--peach-deep); font-weight: 500; text-decoration: none; }
+  article.legal-body a:hover { text-decoration: underline; }
+  footer .legal a { color: inherit; text-decoration: underline; }
+
+  footer { padding: 56px 0 48px; border-top: 1px solid var(--line); margin-top: 72px; }
+  footer .f-inner { display:flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; align-items:center; }
+  footer .brand { font-size: 1.05rem; }
+  footer .legal { font-size: 0.82rem; color: var(--ink-mute); max-width: 520px; }
+
+  @media (max-width: 880px) {
+    .nav-toggle { display:inline-flex; }
+    .nav-links { display:flex; position:absolute; top:72px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0; background:rgba(245,242,236,0.98); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding:8px 28px 20px; transform:translateY(-12px); opacity:0; pointer-events:none; transition:opacity .22s ease, transform .22s ease; box-shadow:0 20px 32px -24px rgba(42,39,36,0.45); }
+    .nav-links.open { transform:none; opacity:1; pointer-events:auto; }
+    .nav-links a { padding:14px 2px; font-size:1.05rem; color:var(--ink); border-bottom:1px solid var(--line); }
+    .nav-links a.btn { margin-top:16px; text-align:center; border-bottom:none; color:#fff; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/" style="text-decoration:none;"><span class="mark"></span> Contour Health</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="/#philosophy">Philosophy</a>
+        <a href="/#membership">Membership</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/metabolic.html">Metabolic</a>
+        <a href="/care-team.html">Care Team</a>
+        <a href="/#blog">Journal</a>
+        <a class="btn" href="https://book.contour.health">Start a Conversation</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="legal-hero">
+  <div class="arc a1"></div>
+  <div class="arc a2"></div>
+  <div class="wrap">
+    <div class="inner">
+      <div class="eyebrow">Legal</div>
+      <h1>Contour Health — Website Privacy Policy</h1>
+      <div class="effective">Effective Date: October 23, 2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <article class="legal-body">
+    
+    <h2>1. Introduction</h2>
+    <p>Contour Health ("Contour," "we," "us," or "our") operates the website located at contour.health (the "Site"), owned and operated by Contour Performance MSO LLC and Contour Performance PLLC. This Privacy Policy explains how we collect, use, disclose, and protect information when you visit our Site, submit a form, or communicate with us by phone, text, or email.</p>
+    <p>This Privacy Policy covers general website and marketing information only. It does not apply to Protected Health Information (PHI) collected in the course of clinical care — that is governed separately by our HIPAA Notice of Privacy Practices, provided to patients directly and available upon request.</p>
+    <h2>2. Information We Collect</h2>
+    <ul>
+    <li>Contact information you provide: name, email address, phone number, state of residence</li>
+    <li>Information submitted through our booking, intake, or contact forms</li>
+    <li>Communications you send us by phone, text message, or email</li>
+    <li>Technical information collected automatically: IP address, browser type, device information, pages visited, and similar usage data, which may be gathered through cookies and similar technologies</li>
+    </ul>
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+    <li>Respond to inquiries and schedule appointments or consultations</li>
+    <li>Send appointment reminders, account notifications, and service-related communications</li>
+    <li>Operate, maintain, and improve the Site</li>
+    <li>Comply with legal and regulatory obligations</li>
+    <li>With your consent, send marketing or informational communications</li>
+    </ul>
+    <h2>4. Text Messaging (SMS) Communications</h2>
+    <p>By providing your phone number through our Site and opting in, you consent to receive text messages from Contour Health, including appointment reminders, scheduling confirmations, and account-related notifications.</p>
+    <ul>
+    <li>Message frequency varies.</li>
+    <li>Message and data rates may apply.</li>
+    <li>Reply STOP at any time to opt out of text messages. Reply HELP for assistance.</li>
+    <li>Text messaging opt-in and your phone number will not be shared or sold to third parties or affiliates for marketing or promotional purposes.</li>
+    <li>Carriers are not liable for delayed or undelivered messages.</li>
+    </ul>
+    <h2>5. Email Communications</h2>
+    <p>If you provide your email address, we may send you appointment confirmations, account notifications, and — with your consent — newsletters or marketing communications. Every marketing email includes an unsubscribe option, and you may opt out at any time.</p>
+    <h2>6. Cookies and Tracking Technologies</h2>
+    <p>Our Site may use cookies and similar technologies to understand how visitors use the Site and to support analytics and, where applicable, advertising. You can control cookies through your browser settings.</p>
+    <h2>7. How We Share Information</h2>
+    <p>We do not sell your personal information. We may share information with:</p>
+    <ul>
+    <li>Service providers who help us operate the Site, scheduling, and communications (for example, our website host, customer relationship management platform, and scheduling/calendar provider)</li>
+    <li>Our electronic health records and care coordination systems, for patients who become members (governed separately by our HIPAA Notice of Privacy Practices)</li>
+    <li>Professional advisors and regulators, as required by law</li>
+    <li>A successor entity in the event of a merger, acquisition, or sale of assets</li>
+    </ul>
+    <h2>8. Data Security</h2>
+    <p>We use reasonable administrative, technical, and physical safeguards designed to protect personal information. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+    <h2>9. Your Choices</h2>
+    <p>You may opt out of marketing emails at any time using the unsubscribe link, and opt out of text messages by replying STOP. You may also contact us directly using the information below to ask about the personal information we hold about you.</p>
+    <h2>10. Children's Privacy</h2>
+    <p>Our Site is not directed to individuals under the age of 18, and we do not knowingly collect personal information from children.</p>
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. The "Effective Date" above reflects the most recent revision.</p>
+    <h2>12. Contact Us</h2>
+    <p>Contour Health<br>728 S Shelmore Blvd, Ste 102<br>Mt Pleasant, SC 29464<br>Phone: <a href="tel:+18432564346">843-256-4346</a><br>Email: <a href="mailto:admin@contour.health">admin@contour.health</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap f-inner">
+    <div class="brand"><span class="mark"></span> Contour Health</div>
+    <div class="legal">
+      © 2026 Contour Health. All rights reserved.<br />
+      <a href="/privacy-policy/">Privacy Policy</a> &middot; <a href="/terms-conditions/">Terms &amp; Conditions</a><br />
+      4017 Hillsboro Pike Suite 418, Nashville, TN 37215<br />
+      This site does not provide medical advice. Please consult your clinician for personalized recommendations.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector(".nav-toggle"), links=document.querySelector(".nav-links");
+  if(!t||!links)return;
+  function set(o){t.classList.toggle("open",o);links.classList.toggle("open",o);t.setAttribute("aria-expanded",o?"true":"false");t.setAttribute("aria-label",o?"Close menu":"Open menu");}
+  t.addEventListener("click",function(){set(!links.classList.contains("open"));});
+  links.addEventListener("click",function(e){if(e.target.tagName==="A")set(false);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);});
+})();
+</script>
+</body>
+</html>
