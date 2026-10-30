@@ -281,6 +281,8 @@
   .loc-list li::before { content:"\2605"; position:absolute; left:16px; top:15px; color:#E85A7A; font-size:1.05rem; }
   .loc-list h3 { margin:0 0 4px; font-size:1.05rem; font-weight:600; color:var(--ink); }
   .loc-list address { font-style:normal; color:var(--ink-soft); font-size:.95rem; line-height:1.45; }
+  .loc-list li.loc-foot { background:none; border:0; border-radius:0; padding:0 2px; color:var(--ink-mute); font-size:.88rem; }
+  .loc-list li.loc-foot::before { content:none; }
   .loc-list .loc-note { color:var(--ink-mute); font-size:.85rem; font-style:italic; }
   @media (max-width:860px) { .coverage-grid { grid-template-columns:1fr; gap:22px; } .loc-list { max-width:520px; margin:0 auto; width:100%; } }
   .map-wrap svg { width:100%; height:auto; display:block; }
@@ -527,25 +529,23 @@
       <div id="coverage-map" class="map-wrap"></div>
       <ul class="loc-list" aria-label="Contour Health clinic locations">
         <li>
-          <h3>Contour Health Nashville</h3>
-          <!-- TODO(Edward): confirm suite number (418 or 310) -->
-          <address>4017 Hillsboro Pike, <span class="loc-note">Suite TBD</span><br />Nashville, TN 37215</address>
-        </li>
-        <li>
           <h3>Contour Health Mt. Pleasant</h3>
-          <!-- TODO(Edward): confirm address (from lease: 728 South Shelmore Boulevard #102, Mount Pleasant, SC 29464) -->
-          <address>728 South Shelmore Blvd #102<br />Mt. Pleasant, SC 29464<br /><span class="loc-note">Address pending confirmation</span></address>
+          <address>728 South Shelmore Blvd #102<br />Mt. Pleasant, SC 29464</address>
         </li>
         <li>
-          <h3>Contour Health Beaufort</h3>
-          <!-- TODO(Edward): add Beaufort street address -->
-          <address>Beaufort, SC<br /><span class="loc-note">Street address coming soon</span></address>
+          <h3>Contour Health Nashville</h3>
+          <address>4017 Hillsboro Pike Suite 418<br />Nashville, TN 37215</address>
+        </li>
+        <li>
+          <h3>Contour Health Port Royal</h3>
+          <address>2206 Mossy Oaks Road, Port Royal, SC 29935</address>
           <div class="loc-note">With Dorri Miller, NP</div>
         </li>
+        <li class="loc-foot">All locations are by appointment only.</li>
       </ul>
     </div>
-    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Nashville, TN, Mt. Pleasant, SC and Beaufort, SC.</p>
-    <p class="coverage-sub">Telehealth nationwide where we practice, plus brick-and-mortar clinics in Nashville, Mt. Pleasant and Beaufort.</p>
+    <p class="coverage-statement">A hybrid clinic — virtual care across 45 states, with in-person locations in Mt. Pleasant, SC, Nashville, TN and Port Royal, SC.</p>
+    <p class="coverage-sub">Telehealth nationwide where we practice, plus brick-and-mortar clinics in Mt. Pleasant, Nashville and Port Royal.</p>
   </div>
 </section>
 
@@ -571,7 +571,6 @@
     <div class="brand"><span class="mark"></span> Contour Health</div>
     <div class="legal">
       © 2026 Contour Health. All rights reserved.<br />
-      <!-- TODO(Edward): confirm Nashville suite number (418 or 310) -->
       4017 Hillsboro Pike Suite 418, Nashville, TN 37215<br />
       This site does not provide medical advice. Please consult your clinician for personalized recommendations.
     </div>
@@ -587,11 +586,11 @@
   var clinics = [
     {name:'Nashville, TN', coords:[-86.7816, 36.1627], dx:9, dy:-11, anchor:'start'},
     {name:'Mt. Pleasant, SC', coords:[-79.8628, 32.7941], dx:11, dy:-9, anchor:'start'},
-    {name:'Beaufort, SC', coords:[-80.6698, 32.4316], dx:-11, dy:17, anchor:'end'}
+    {name:'Port Royal, SC', coords:[-80.693, 32.379], dx:-11, dy:17, anchor:'end'}
   ];
   var svg = d3.select('#coverage-map').append('svg')
     .attr('viewBox','0 0 900 560').attr('width','100%').attr('role','img')
-    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Nashville, TN, Mt. Pleasant, SC and Beaufort, SC.');
+    .attr('aria-label','US map: Contour Health is a hybrid clinic — virtual care in 45 states, with in-person locations in Mt. Pleasant, SC, Nashville, TN and Port Royal, SC.');
   var proj = d3.geoAlbersUsa().scale(1150).translate([450,275]);
   var path = d3.geoPath(proj);
   d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(function (us) {
